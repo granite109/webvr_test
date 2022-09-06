@@ -35,7 +35,7 @@
         frameworkUrl: buildUrl + "/webxr_test.framework.js",
         codeUrl: buildUrl + "/webxr_test.wasm",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "mpmf",
+        companyName: "LiveBuilder",
         productName: "VideoWebXR",
         productVersion: "0.0.1",
       };
@@ -49,8 +49,8 @@
       var unityInstance = null;
       
 
-      canvasContainer.style.width = "1280px";
-      canvasContainer.style.height = "720px";
+      canvasContainer.style.width = "960px";
+      canvasContainer.style.height = "600px";
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
@@ -78,17 +78,17 @@
 
       document.addEventListener('onARSupportedCheck', function (event) {
         enterARButton.disabled = !event.detail.supported;
-      }, true);
+      }, false);
       document.addEventListener('onVRSupportedCheck', function (event) {
         enterVRButton.disabled = !event.detail.supported;
-      }, true);
+      }, false);
 
       enterARButton.addEventListener('click', function (event) {
         unityInstance.Module.WebXR.toggleAR();
-      }, true);
+      }, false);
       enterVRButton.addEventListener('click', function (event) {
         unityInstance.Module.WebXR.toggleVR();
-      }, true);
+      }, false);
     </script>
   </body>
 </html>
